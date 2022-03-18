@@ -1,0 +1,10 @@
+#weby_status {
+    font-size: 12;
+}
+
+.allowed {
+    color: green;
+}
+¨.banned {
+    color: red;
+}
