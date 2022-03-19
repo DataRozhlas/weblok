@@ -32,6 +32,7 @@ function makeCheck() {
   failed = [];
   webyStatusShow.style.visibility = 'hidden';
   webyStatus.style.display = 'none';
+  webyStatusShow.innerHTML = 'Zobrazit weby';
   checkBtn.innerHTML = 'Kontroluji...';
   checkBtn.disabled = true;
   const prom = [];
