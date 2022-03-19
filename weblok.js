@@ -34,7 +34,7 @@ function makeCheck() {
   checkBtn.disabled = true;
   const prom = [];
 
-  fetch('./urls.json')
+  fetch('https://data.irozhlas.cz/weblok/urls.json')
     .then((response) => response.json())
     .then((d) => {
       count = d.length;
