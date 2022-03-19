@@ -10,10 +10,10 @@ function probe(url, i) {
       mode: 'no-cors',
       signal: controller.signal,
     }).then(() => {
-      webyStatus.innerHTML += `<span class="result allowed">${url}</p>`;
+      webyStatus.innerHTML += `<span class="result allowed">${url}</span><br>`;
       resolve();
     }).catch(() => {
-      webyStatus.innerHTML += `<span class="result banned">NEDOSTUPNÉ: ${url}</p>`;
+      webyStatus.innerHTML += `<span class="result banned">NEDOSTUPNÉ: ${url}</span><br>`;
       failed.push(i);
       infoDiv.innerHTML = `Nedostupné: <span class="banned">${failed.length}</span>/${count}`;
       resolve();
@@ -29,7 +29,7 @@ function dSend(jsn) {
 }
 
 function makeCheck() {
-  webyStatusShow.style.display = 'none';
+  webyStatusShow.style.visibility = 'hidden';
   checkBtn.innerHTML = 'Kontroluji...';
   checkBtn.disabled = true;
   const prom = [];
@@ -44,7 +44,7 @@ function makeCheck() {
       });
       Promise.allSettled(prom).then(() => {
         dSend(failed);
-        webyStatusShow.style.display = '';
+        webyStatusShow.style.visibility = 'visible';
         setTimeout(() => {
           checkBtn.innerHTML = 'Zkontrolovat';
           checkBtn.disabled = false;
@@ -62,7 +62,7 @@ mainDiv.appendChild(checkBtn);
 
 const infoDiv = document.createElement('div');
 infoDiv.setAttribute('id', 'info');
-infoDiv.innerHTML = '<p>Prověřte si, které dezifnormační weby jsou na vašem připojení k internetu nedostupné.</p>';
+infoDiv.innerHTML = 'Prověřte si, které dezinformační weby nejsou na vašem připojení k internetu nedostupné. Anonymně sebraná data nám zároveň pomohou objasnit, které stránky blokují kteří poskytovatelé internetu.';
 mainDiv.appendChild(infoDiv);
 
 const webyStatus = document.createElement('div');
@@ -72,7 +72,7 @@ webyStatus.style.display = 'none';
 const webyStatusShow = document.createElement('button');
 webyStatusShow.setAttribute('id', 'weby_status_show');
 webyStatusShow.innerHTML = 'Zobrazit weby';
-webyStatusShow.style.display = 'none';
+webyStatusShow.style.visibility = 'hidden';
 webyStatusShow.addEventListener('click', () => {
   if (webyStatus.style.display === 'none') {
     webyStatus.style.display = '';
@@ -87,5 +87,5 @@ mainDiv.appendChild(webyStatus);
 
 const webyCredits = document.createElement('div');
 webyCredits.setAttribute('id', 'weby_credits');
-webyCredits.innerHTML = 'Zdroj: Seznam dezinformačních webů podle <a target="_blank" href="http://www.atlaskonspiraci.cz">Atlasu konspirací</a> doplněný o <a target="_blank" href="https://www.root.cz/zpravicky/narodni-centrum-kybernetickych-operaci-vyzyva-poskytovatele-k-blokaci-dalsich-webu/">seznam Vojenského zpravodajství</a>.';
+webyCredits.innerHTML = 'Zdroj: Dezinformační weby podle <a target="_blank" href="http://www.atlaskonspiraci.cz">Atlasu konspirací</a> doplněné o <a target="_blank" href="https://www.root.cz/zpravicky/narodni-centrum-kybernetickych-operaci-vyzyva-poskytovatele-k-blokaci-dalsich-webu/">seznam Vojenského zpravodajství</a>.';
 mainDiv.appendChild(webyCredits);
