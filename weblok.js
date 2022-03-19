@@ -31,6 +31,7 @@ function dSend(jsn) {
 function makeCheck() {
   failed = [];
   webyStatusShow.style.visibility = 'hidden';
+  webyStatus.style.display = 'none';
   checkBtn.innerHTML = 'Kontroluji...';
   checkBtn.disabled = true;
   const prom = [];
