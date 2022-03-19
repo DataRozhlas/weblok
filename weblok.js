@@ -1,4 +1,4 @@
-const failed = [];
+let failed = [];
 let count = 0;
 
 function probe(url, i) {
@@ -29,6 +29,7 @@ function dSend(jsn) {
 }
 
 function makeCheck() {
+  failed = [];
   webyStatusShow.style.visibility = 'hidden';
   checkBtn.innerHTML = 'Kontroluji...';
   checkBtn.disabled = true;
