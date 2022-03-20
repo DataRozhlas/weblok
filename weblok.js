@@ -90,5 +90,5 @@ mainDiv.appendChild(webyStatus);
 
 const webyCredits = document.createElement('div');
 webyCredits.setAttribute('id', 'weby_credits');
-webyCredits.innerHTML = 'Zdroj: Dezinformační weby podle <a target="_blank" href="http://www.atlaskonspiraci.cz">Atlasu konspirací</a> doplněné o <a target="_blank" href="https://www.root.cz/zpravicky/narodni-centrum-kybernetickych-operaci-vyzyva-poskytovatele-k-blokaci-dalsich-webu/">seznam Vojenského zpravodajství</a>.';
+webyCredits.innerHTML = 'Zdroj: Dezinformační weby podle <a target="_blank" href="http://www.atlaskonspiraci.cz">Atlasu konspirací</a> doplněné o <a target="_blank" href="https://www.lupa.cz/clanky/cesko-v-hybridni-valce-vlada-vyzyva-k-cinu-armada-zada-operatory-o-blokovani-proruskych-dezinformacnich-webu/">seznam Vojenského zpravodajství podle serveru Lupa.cz</a>.';
 mainDiv.appendChild(webyCredits);
