@@ -30,6 +30,7 @@ function dSend(jsn) {
 
 function makeCheck() {
   failed = [];
+  webyStatus.innerHTML = '';
   webyStatusShow.style.visibility = 'hidden';
   webyStatus.style.display = 'none';
   webyStatusShow.innerHTML = 'Zobrazit weby';
