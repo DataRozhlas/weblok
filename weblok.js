@@ -66,7 +66,7 @@ mainDiv.appendChild(checkBtn);
 
 const infoDiv = document.createElement('div');
 infoDiv.setAttribute('id', 'info');
-infoDiv.innerHTML = 'Prověřte si, které dezinformační weby nejsou na vašem připojení k internetu nedostupné. Anonymně sebraná data nám zároveň pomohou objasnit, které stránky blokují kteří poskytovatelé internetu.';
+infoDiv.innerHTML = 'Prověřte si, které dezinformační weby nejsou na vašem připojení k internetu dostupné. Anonymně sebraná data nám zároveň pomohou objasnit, který poskytovatel připojení blokuje které weby.';
 mainDiv.appendChild(infoDiv);
 
 const webyStatus = document.createElement('div');
